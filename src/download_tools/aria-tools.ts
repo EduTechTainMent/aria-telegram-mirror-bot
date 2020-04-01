@@ -183,7 +183,7 @@ export function uploadFile(dlDetails: DlVars, filePath: string, fileSize: number
         if (res['free'] > fileSize) {
           console.log('Starting archival');
           var destName = fileName + '.tar';
-          tar.archive(realFilePath, destName, (err: string, size: number) => {
+          tar.archive(realFilePath, destName, (err: any, size: number) => {
             if (err) {
               callback(err, dlDetails.gid, null, null, null, null, false);
             } else {
